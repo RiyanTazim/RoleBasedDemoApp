@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\Backend\Dashboard;
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -10,26 +7,12 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| This file loads the main route definitions.
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Load tazim routes
+require __DIR__.'/tazim.php';
 
-Route::get('/dashboard2', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
+// Load auth routes (from Laravel Breeze or Jetstream)
 require __DIR__.'/auth.php';
