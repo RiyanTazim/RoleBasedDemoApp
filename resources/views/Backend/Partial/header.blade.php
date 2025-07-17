@@ -14,7 +14,7 @@
                         <i data-feather="menu"></i>
                     </a>
                 </li>
-                <li class="dropdown pc-h-item">
+                {{-- <li class="dropdown pc-h-item">
                     <a class="pc-head-link dropdown-toggle me-0" data-pc-toggle="dropdown" href="#" role="button"
                         aria-haspopup="false" aria-expanded="false">
                         <i data-feather="search"></i>
@@ -25,7 +25,7 @@
                                 placeholder="Search here. . ." />
                         </form>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <!-- [Mobile Media Block end] -->
@@ -49,150 +49,6 @@
                             <i data-feather="settings"></i>
                             <span>Default</span>
                         </a>
-                    </div>
-                </li>
-                <li class="dropdown pc-h-item">
-                    <a class="pc-head-link dropdown-toggle me-0" data-pc-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <i data-feather="settings"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
-                        <a href="{{ route('profile.edit') }}" class="dropdown-item">
-                            <i class="ti ti-user"></i>
-                            <span>My Account</span>
-                        </a>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="dropdown-item w-full text-start">
-                                <i class="ti ti-power"></i>
-                                <span>Log Out</span>
-                            </button>
-                        </form>
-                    </div>
-                </li>
-                <li class="dropdown pc-h-item">
-                    <a class="pc-head-link dropdown-toggle me-0" data-pc-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <i data-feather="bell"></i>
-                        <span class="badge bg-success-500 text-white rounded-full z-10 absolute right-0 top-0">3</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown p-2">
-                        {{-- <div class="dropdown-header flex items-center justify-between py-4 px-5">
-                            <h5 class="m-0">Notifications</h5>
-                            <a href="#!" class="btn btn-link btn-sm">Mark all read</a>
-                        </div>
-                        <div class="dropdown-body header-notification-scroll relative py-4 px-5"
-                            style="max-height: calc(100vh - 215px)">
-                            <p class="text-span mb-3">Today</p>
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <div class="flex gap-4">
-                                        <div class="shrink-0">
-                                            <img class="img-radius w-12 h-12 rounded-0"
-                                                src="{{ asset('/') }}assets/images/user/avatar-1.jpg"
-                                                alt="Generic placeholder image" />
-                                        </div>
-                                        <div class="grow">
-                                            <span class="float-end text-sm text-muted">2 min ago</span>
-                                            <h5 class="text-body mb-2">UI/UX Design</h5>
-                                            <p class="mb-0">
-                                                Lorem Ipsum has been the industry's standard dummy text ever since
-                                                the 1500s, when an unknown
-                                                printer took a galley of
-                                                type and scrambled it to make a type
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <div class="flex gap-4">
-                                        <div class="shrink-0">
-                                            <img class="img-radius w-12 h-12 rounded-0"
-                                                src="{{ asset('/') }}assets/images/user/avatar-2.jpg"
-                                                alt="Generic placeholder image" />
-                                        </div>
-                                        <div class="grow">
-                                            <span class="float-end text-sm text-muted">1 hour ago</span>
-                                            <h5 class="text-body mb-2">Message</h5>
-                                            <p class="mb-0">Lorem Ipsum has been the industry's standard dummy
-                                                text ever since the 1500.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-span mb-3 mt-4">Yesterday</p>
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <div class="flex gap-4">
-                                        <div class="shrink-0">
-                                            <img class="img-radius w-12 h-12 rounded-0"
-                                                src="{{ asset('/') }}assets/images/user/avatar-3.jpg"
-                                                alt="Generic placeholder image" />
-                                        </div>
-                                        <div class="grow ms-3">
-                                            <span class="float-end text-sm text-muted">2 hour ago</span>
-                                            <h5 class="text-body mb-2">Forms</h5>
-                                            <p class="mb-0">
-                                                Lorem Ipsum has been the industry's standard dummy text ever since
-                                                the 1500s, when an unknown
-                                                printer took a galley of
-                                                type and scrambled it to make a type
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <div class="flex gap-4">
-                                        <div class="shrink-0">
-                                            <img class="img-radius w-12 h-12 rounded-0"
-                                                src="{{ asset('/') }}assets/images/user/avatar-4.jpg"
-                                                alt="Generic placeholder image" />
-                                        </div>
-                                        <div class="grow ms-3">
-                                            <span class="float-end text-sm text-muted">12 hour ago</span>
-                                            <h5 class="text-body mb-2">Challenge invitation</h5>
-                                            <p class="mb-2">
-                                                <strong>Jonny aber</strong>
-                                                invites to join the challenge
-                                            </p>
-                                            <button class="btn btn-sm btn-outline-secondary me-2">Decline</button>
-                                            <button class="btn btn-sm btn-primary">Accept</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <div class="flex gap-4">
-                                        <div class="shrink-0">
-                                            <img class="img-radius w-12 h-12 rounded-0"
-                                                src="{{ asset('/') }}assets/images/user/avatar-5.jpg"
-                                                alt="Generic placeholder image" />
-                                        </div>
-                                        <div class="grow ms-3">
-                                            <span class="float-end text-sm text-muted">5 hour ago</span>
-                                            <h5 class="text-body mb-2">Security</h5>
-                                            <p class="mb-0">
-                                                Lorem Ipsum has been the industry's standard dummy text ever since
-                                                the 1500s, when an unknown
-                                                printer took a galley of
-                                                type and scrambled it to make a type
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center py-2">
-                            <a href="#!"
-                                class="text-danger-500 hover:text-danger-600 focus:text-danger-600 active:text-danger-600">
-                                Clear all Notifications
-                            </a>
-                        </div> --}}
                     </div>
                 </li>
                 <li class="dropdown pc-h-item header-user-profile">
@@ -244,8 +100,7 @@
                                 <div class="grid my-3">
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button type="submit"
-                                            class="btn btn-primary flex items-center justify-center">
+                                        <button type="submit" class="btn btn-primary flex items-center justify-center">
                                             <svg class="pc-icon me-2 w-[22px] h-[22px]">
                                                 <use xlink:href="#custom-logout-1-outline"></use>
                                             </svg>

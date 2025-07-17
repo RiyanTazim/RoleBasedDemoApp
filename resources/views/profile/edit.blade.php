@@ -4,7 +4,7 @@
     <div class="pc-container">
         <div class="py-4">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-                <h2 class="font-semibold text-xl text-white mb-4">
+                <h2 class="font-semibold text-xl text-light mb-4">
                     {{ __('Edit Profile') }}
                 </h2>
 
